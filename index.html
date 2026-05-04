@@ -6,144 +6,252 @@
 <title>Privacy Policy &mdash; Squiggly: Kids Drawing &amp; Coloring App</title>
 <meta name="description" content="Privacy policy for Squiggly: Kids Drawing & Coloring App. We do not collect, transmit, or share any personal information. The app runs entirely on your device." />
 <meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
 <style>
+  /* ──────────────────────────────────────────────────────────────────
+     Squiggly brand palette — same colours used inside the Android app
+     so the policy reads as a continuation of the kids' product, not a
+     generic legal page.
+     ────────────────────────────────────────────────────────────────── */
   :root {
-    --bg: #f6fbff;
-    --panel: #ffffff;
-    --ink: #1f2a44;
-    --ink-soft: #4a5775;
-    --accent: #5BA8E2;
-    --accent-deep: #2f7bbf;
-    --rule: #e2ecf6;
-    --pill-bg: #eaf4fd;
-    --pill-ink: #1f5d96;
+    --paper:        #FFFCF0;   /* warm cream — main bg, matches in-app Paper */
+    --paper-deep:   #F4E3BF;   /* slightly toasted cream — section accents   */
+    --ink:          #221F35;   /* near-black — body text + borders           */
+    --ink-soft:     #5A526B;   /* muted ink — secondary copy                 */
+    --berry:        #D14E91;   /* pink — Coloring card                       */
+    --leaf:         #3FB85C;   /* green — Tracing card                       */
+    --sky:          #5BA8E2;   /* blue  — Water Art card + header gradient   */
+    --lilac:        #9963D6;   /* purple — Number Paint card                 */
+    --coral:        #E66B3B;   /* orange — header accent                     */
+    --sun:          #F2C13B;   /* yellow — Drawing card                      */
   }
   * { box-sizing: border-box; }
   html, body {
     margin: 0;
     padding: 0;
-    background: var(--bg);
+    background: var(--paper);
     color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                 Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji",
-                 sans-serif;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 Roboto, Helvetica, Arial, "Apple Color Emoji",
+                 "Segoe UI Emoji", sans-serif;
     line-height: 1.6;
     -webkit-text-size-adjust: 100%;
+    /* Crayon-box vertical stripes — same five brand colours as the
+       in-app menu screen, very low alpha so the cream paper still
+       reads dominant. Pure CSS gradient with hard colour stops gives
+       the same crisp band edges Compose's `Brush.horizontalGradient`
+       produces inside the app. */
+    background-image: linear-gradient(
+      to right,
+      rgba(209, 78, 145, 0.10) 0%, rgba(209, 78, 145, 0.10) 20%,
+      rgba(63, 184, 92, 0.10) 20%,  rgba(63, 184, 92, 0.10) 40%,
+      rgba(91, 168, 226, 0.10) 40%, rgba(91, 168, 226, 0.10) 60%,
+      rgba(153, 99, 214, 0.10) 60%, rgba(153, 99, 214, 0.10) 80%,
+      rgba(242, 193, 59, 0.10) 80%, rgba(242, 193, 59, 0.10) 100%
+    );
   }
+
+  /* ──────────────────────────────────────────────────────────────────
+     Header — sky-blue with a hard ink border on the bottom edge,
+     matching the chunky-card aesthetic the app uses everywhere.
+     ────────────────────────────────────────────────────────────────── */
   header {
-    background: linear-gradient(180deg, #5BA8E2 0%, #4694d1 100%);
-    color: #ffffff;
-    padding: 48px 24px 56px;
+    background: linear-gradient(180deg, var(--sky) 0%, #4694D1 100%);
+    color: #FFFFFF;
+    padding: 56px 24px 64px;
     text-align: center;
+    border-bottom: 4px solid var(--ink);
+    position: relative;
   }
   header .badge {
     display: inline-block;
-    background: rgba(255,255,255,0.18);
-    border: 1px solid rgba(255,255,255,0.35);
-    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.20);
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    padding: 8px 16px;
     border-radius: 999px;
     font-size: 13px;
-    letter-spacing: 0.6px;
+    font-weight: 800;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
   header h1 {
-    margin: 0 0 6px;
-    font-size: clamp(28px, 4vw, 40px);
+    margin: 0 0 8px;
+    font-size: clamp(34px, 5vw, 48px);
+    font-weight: 900;
     letter-spacing: -0.5px;
+    /* Subtle hard drop-shadow — same trick the splash title uses for
+       its punchy double-drawn look. */
+    text-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
   }
   header p {
     margin: 0;
-    font-size: 16px;
+    font-size: 17px;
+    font-weight: 700;
     opacity: 0.95;
   }
+
+  /* ──────────────────────────────────────────────────────────────────
+     Main panel — cream card with a hard offset shadow + ink border,
+     matching every card in the in-app Parent Dashboard.
+     ────────────────────────────────────────────────────────────────── */
   main {
-    max-width: 760px;
-    margin: -28px auto 64px;
+    max-width: 780px;
+    margin: -32px auto 72px;
     padding: 0 20px;
   }
   .panel {
-    background: var(--panel);
-    border-radius: 18px;
-    box-shadow: 0 12px 32px rgba(31, 42, 68, 0.08),
-                0 2px 6px rgba(31, 42, 68, 0.04);
-    padding: 32px clamp(20px, 4vw, 40px);
+    background: #FFFFFF;
+    border: 3px solid var(--ink);
+    border-radius: 24px;
+    box-shadow: 0 8px 0 0 rgba(34, 31, 53, 0.85),
+                0 14px 28px rgba(34, 31, 53, 0.10);
+    padding: 36px clamp(22px, 4vw, 44px);
+    position: relative;
   }
+
+  /* Summary callout — cream-paper background with a coral left rule. */
   .summary {
-    background: #f0f8fe;
-    border-left: 4px solid var(--accent);
-    border-radius: 10px;
-    padding: 16px 18px;
-    margin: 0 0 28px;
-    font-size: 15.5px;
+    background: var(--paper-deep);
+    border: 2px solid var(--ink);
+    border-left: 6px solid var(--coral);
+    border-radius: 14px;
+    padding: 18px 20px;
+    margin: 0 0 32px;
+    font-size: 16px;
+    font-weight: 700;
     color: var(--ink);
+    line-height: 1.55;
   }
-  .summary strong { color: var(--accent-deep); }
+  .summary strong { color: var(--coral); font-weight: 900; }
+
+  /* ──────────────────────────────────────────────────────────────────
+     Headings — Nunito Black, ink colour, with a coral rule under each
+     section title. Echoes the dashboard card title style in the app.
+     ────────────────────────────────────────────────────────────────── */
   h2 {
-    color: var(--accent-deep);
-    font-size: 20px;
-    margin: 32px 0 10px;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 8px;
+    color: var(--ink);
+    font-size: 22px;
+    font-weight: 900;
+    margin: 36px 0 12px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--paper-deep);
   }
   h2:first-of-type { margin-top: 8px; }
   h3 {
-    font-size: 16px;
-    margin: 20px 0 6px;
+    font-size: 17px;
+    font-weight: 800;
+    margin: 22px 0 8px;
     color: var(--ink);
   }
-  p, li { font-size: 15.5px; color: var(--ink); }
-  ul { padding-left: 22px; }
-  li { margin: 4px 0; }
+  p, li {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  p strong, li strong { font-weight: 800; }
+  ul { padding-left: 24px; }
+  li { margin: 6px 0; }
+
+  /* ──────────────────────────────────────────────────────────────────
+     Pills — each one tinted with a different brand colour so the
+     short summary at the top of the page reads as a colourful "we
+     promise none of these" sticker strip. Round-robin assigns by
+     :nth-child so authors don't have to hand-pick a colour per pill.
+     ────────────────────────────────────────────────────────────────── */
   .pill {
     display: inline-block;
-    background: var(--pill-bg);
-    color: var(--pill-ink);
+    border: 2px solid var(--ink);
     border-radius: 999px;
-    padding: 3px 10px;
+    padding: 5px 12px;
     font-size: 13px;
-    font-weight: 600;
-    margin: 2px 4px 2px 0;
+    font-weight: 800;
+    color: var(--ink);
+    margin: 3px 5px 3px 0;
+    background: var(--paper-deep);
   }
+  .pill:nth-child(7n+1) { background: rgba(209, 78, 145, 0.18); }
+  .pill:nth-child(7n+2) { background: rgba(63, 184, 92, 0.20);  }
+  .pill:nth-child(7n+3) { background: rgba(91, 168, 226, 0.22); }
+  .pill:nth-child(7n+4) { background: rgba(153, 99, 214, 0.20); }
+  .pill:nth-child(7n+5) { background: rgba(242, 193, 59, 0.30); }
+  .pill:nth-child(7n+6) { background: rgba(230, 107, 59, 0.20); }
+  .pill:nth-child(7n)   { background: var(--paper-deep);        }
+
+  /* ──────────────────────────────────────────────────────────────────
+     Tables — chunky borders, alternating row tint matching the cream
+     palette, ink-black header row.
+     ────────────────────────────────────────────────────────────────── */
   table {
     width: 100%;
-    border-collapse: collapse;
-    margin: 12px 0 8px;
-    font-size: 14.5px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 14px 0 10px;
+    font-size: 15px;
+    border: 2px solid var(--ink);
+    border-radius: 14px;
+    overflow: hidden;
   }
   th, td {
     text-align: left;
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--rule);
+    padding: 12px 14px;
+    border-bottom: 2px solid var(--paper-deep);
     vertical-align: top;
   }
-  th { color: var(--ink-soft); font-weight: 600; background: #f7fbff; }
-  code {
-    background: #f1f5fa;
-    padding: 1px 6px;
-    border-radius: 4px;
-    font-size: 13.5px;
-    color: #25395c;
+  tr:last-child td { border-bottom: none; }
+  th {
+    color: #FFFFFF;
+    background: var(--ink);
+    font-weight: 800;
   }
-  a { color: var(--accent-deep); }
+  tr:nth-child(even) td { background: rgba(244, 227, 191, 0.22); }
+
+  /* Inline code — sky-tinted with ink border, matches the app's
+     "small chip" treatment (e.g. permission names, settings paths). */
+  code {
+    background: rgba(91, 168, 226, 0.14);
+    padding: 2px 7px;
+    border-radius: 6px;
+    border: 1px solid rgba(34, 31, 53, 0.12);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+
+  /* Links — coral, underlined, weight 800 so they read as clickable
+     in a kid-friendly way. */
+  a {
+    color: var(--coral);
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 2px;
+  }
+  a:hover { color: var(--berry); }
+
   footer {
     text-align: center;
     color: var(--ink-soft);
-    font-size: 13px;
-    padding: 8px 16px 36px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 16px 40px;
   }
   .updated {
     text-align: center;
     color: var(--ink-soft);
     font-size: 13px;
-    margin-top: 6px;
+    font-weight: 700;
+    margin-top: 10px;
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="badge">Family-Friendly &middot; Offline</div>
+  <div class="badge">Family-Friendly &middot; Offline &middot; By Apps Tribe</div>
   <h1>Privacy Policy</h1>
   <p>Squiggly: Kids Drawing &amp; Coloring App</p>
 </header>
@@ -170,12 +278,20 @@
       <span class="pill">COPPA &amp; GDPR-K aligned</span>
     </p>
 
-    <h2>1. Who this policy applies to</h2>
+    <h2>1. Who we are &amp; who this policy applies to</h2>
     <p>
-      This policy applies to <em>Squiggly: Kids Drawing &amp; Coloring App</em>
-      (the &ldquo;App&rdquo;), an Android application designed for children.
-      It is published under the Google Play Families program and is intended
-      for use by children with parental supervision.
+      <em>Squiggly: Kids Drawing &amp; Coloring App</em> (the
+      &ldquo;App&rdquo;) is published by <strong>Apps Tribe</strong>
+      &mdash; that&rsquo;s us, the team that built Squiggly. The App
+      is an Android application designed for children, listed under
+      the Google Play Families program, and intended for use by
+      children with parental supervision.
+    </p>
+    <p>
+      This privacy policy applies to the App and the small amount of
+      on-device data it stores. Apps Tribe does not operate any
+      servers that the App talks to &mdash; everything runs on your
+      device.
     </p>
 
     <h2>2. What information we collect</h2>
@@ -339,23 +455,19 @@
 
     <h2>11. Contact</h2>
     <p>
-      Questions or concerns about this policy? Please contact the developer
-      at:<br />
+      Questions or concerns about this policy? Reach out to
+      <strong>Apps Tribe</strong> at:<br />
       <strong>Email:</strong>
       <a href="mailto:apps.tribe2026@gmail.com">apps.tribe2026@gmail.com</a>
-    </p>
-    <p style="font-size: 13.5px; color: var(--ink-soft);">
-      Replace the email above with your real contact address before
-      submitting the App to Google Play.
     </p>
 
   </div>
 
-  <p class="updated">Last updated: April 30, 2026</p>
+  <p class="updated">Last updated: May 4, 2026</p>
 </main>
 
 <footer>
-  &copy; 2026 Squiggly. All rights reserved.
+  &copy; 2026 Apps Tribe. Squiggly is a product of Apps Tribe.
 </footer>
 
 </body>
